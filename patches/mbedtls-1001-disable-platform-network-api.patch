@@ -1,0 +1,16 @@
+diff --git a/include/mbedtls/mbedtls_config.h b/include/mbedtls/mbedtls_config.h
+index ebc9276d20..5d44f67d38 100644
+--- a/include/mbedtls/mbedtls_config.h
++++ b/include/mbedtls/mbedtls_config.h
+@@ -3003,7 +3003,7 @@
+  *
+  * This module provides networking routines.
+  */
+-#define MBEDTLS_NET_C
++// KYLE #define MBEDTLS_NET_C
+ 
+ /**
+  * \def MBEDTLS_OID_C
+diff --git a/patched b/patched
+new file mode 100644
+index 0000000000..e69de29bb2
