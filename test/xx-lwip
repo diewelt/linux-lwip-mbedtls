@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -I. -I.. -I../lwip/src/include/ -I../arch -L../build/lwip  main.c echo_server.c tcp_client.c socket_echo_server.c netif.c pcap.c ../arch/sys_arch.c -o t -llwipcore -llwipallapps -lpcap

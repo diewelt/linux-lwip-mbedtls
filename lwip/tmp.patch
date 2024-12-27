@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f05c0f61..c5b89133 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,6 +15,9 @@ set(CPACK_SOURCE_IGNORE_FILES "/build/;${CPACK_SOURCE_IGNORE_FILES};.git")
+ set(CPACK_SOURCE_PACKAGE_FILE_NAME "lwip-${LWIP_VERSION_MAJOR}.${LWIP_VERSION_MINOR}.${LWIP_VERSION_REVISION}")
+ include(CPack)
+ 
++include_directories(src/include)
++include_directories(src/include/arch)
++
+ # Target for package generation
+ add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
+ add_dependencies(dist lwipdocs)
