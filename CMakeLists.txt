@@ -10,6 +10,7 @@ add_subdirectory("lwip" EXCLUDE_FROM_ALL)
 add_subdirectory("mbedtls" EXCLUDE_FROM_ALL)
 
 # lwip
+include_directories(.)
 include_directories(arch)
 include_directories(lwip/src/include)
 
