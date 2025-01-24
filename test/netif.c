@@ -96,13 +96,13 @@ err_t net_init(char *ifname)
     char *dev = "enp0s3";
     int i;
 
-    /* 192.168.1.22 = 0x1601a8c0 or 0xc0a80116 */
-    ip_addr_t ip = { 0x1601a8c0 };
+    /* we will use DHCP, so ip addr will be overridden */
+    /* 192.168.1.2 = 0x0201a8c0 or 0xc0a80116 */
+    ip_addr_t ip = { 0x0201a8c0 };
     /* 192.168.1.1 */
     ip_addr_t gw = { 0x0101a8c0 };
     /* 255.255.255.0 */
     ip_addr_t mask = { 0x00ffffff };
-    u32_t ip_addr = 0x1601a8c0, mask_addr = 0x00ffffff;
 
     /* Disable firewall */
     system("sudo ufw disable");
@@ -201,8 +201,8 @@ err_t net_init(char *ifname)
 
     // MDNS or mdns
     mdns_resp_init();
-    mdns_resp_add_netif(&my_netif, "kylelwip", 255);
-    mdns_resp_add_service(&my_netif, "kylelwip", "_http",
+    mdns_resp_add_netif(&my_netif, "testlwip", 255);
+    mdns_resp_add_service(&my_netif, "testlwip", "_http",
                            DNSSD_PROTO_TCP, 80, 3600, srv_txt, NULL);
 }
 
