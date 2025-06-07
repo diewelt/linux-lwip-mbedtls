@@ -55,5 +55,8 @@ IPv4 주소는 DHCP를 통해서 내려받는다.
 
 가상의 ethernet interface 는 DHCP 를 통해서 ipv4 address 를 내려받는다. 또한 mDNS가 설정되어 있으므로 avahi-browse 를 이용해서 ipv4 address 를 알아낼 수 있다. 호스트 이름은 testlwip 이다.
 
-* avahi-browse -a
-* ping testlwip.local
+avahi-browse -a </br>
+ping testlwip.local </br>
+
+### curl usage
+$ curl -vvv -k --tls-max 1.2 --cert ~/workspace/certs/inter-ca/combined-user.crt --key ~/workspace/certs/inter-ca/user.key https://192.168.1.106:4433 --ciphers ECDHE-RSA-AES256-GCM-SHA384 </br>

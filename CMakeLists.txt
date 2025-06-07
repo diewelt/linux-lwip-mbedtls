@@ -5,6 +5,10 @@ project(TestProject)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/test)
 #list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_LIST_DIR}/test")
 
+add_compile_options(-g -Wall -Wextra -DDEBUG)
+
+add_compile_definitions(MBEDTLS_CONFIG_FILE="${CMAKE_SOURCE_DIR}/test/mbedtls_config.h")
+
 # Include the lwip library
 add_subdirectory("lwip" EXCLUDE_FROM_ALL)
 add_subdirectory("mbedtls" EXCLUDE_FROM_ALL)
@@ -28,7 +32,8 @@ find_package(PCAP REQUIRED)
 add_executable(TestProject
     "test/main.c"
     test/echo_server.c
-    test/netif.c test/pcap.c
+    test/netif.c
+    test/pcap.c
     test/socket_echo_server.c
     test/mbedtls_net_sockets.c
     test/ssl_server.c

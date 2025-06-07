@@ -94,6 +94,9 @@
 #define LWIP_RAND() ((u32_t)rand())
 
 /* Minimal changes to opt.h required for tcp unit tests: */
+#define MEMP_NUM_TCP_PCB                        16
+#define MEMP_NUM_NETCONN                        8
+#define MEMP_NUM_TCP_PCB_LISTEN                 8
 #define TCP_MSS                                 1460
 #define MEM_SIZE                                16000
 #define TCP_SND_QUEUELEN                        40

@@ -355,7 +355,7 @@ reset:
     if ((ret = mbedtls_net_accept(&listen_fd, &client_fd,
                                   NULL, 0, NULL)) != 0) {
         mbedtls_printf(" failed\n  ! mbedtls_net_accept returned %d\n\n", ret);
-        goto exit;
+        goto reset;
     }
 
     mbedtls_ssl_set_bio(&ssl, &client_fd, mbedtls_net_send, mbedtls_net_recv, NULL);
